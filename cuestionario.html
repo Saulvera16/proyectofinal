@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcd.bootstrapcdn.con/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="footer.css">    
+           
+<title>Pagina</title>
+</head>
+<body>
+<style>
+    body{
+    background-image: linear-gradient(to right, #581F18, #B80300, #2E2E38, #955E42, red);
+}
+</style>
+<div style="margin:24px;">
+    <nav class="navbar navbar-light" style="background-color: #000103;">
+    <div class="container">
+    <a class="navbar-brand" href="index.html">Inicio</a>
+    <ul class="nav navbar-nav">
+<li>
+<a href="index2.html">Index</a> 
+</li>
+<li>
+<a href="cuestionario.html">Cuestionario</a>
+</li>
+<li>
+<a href="perfil.html">Perfil</a>
+</li>
+<li>
+<a href="movies.html">Api Movies</a>
+</li>
+<li>
+    <a href="calculadora1.html">Calculadora</a>
+</li>
+<li>
+<a href="calculadora2.html">Calculadora Fisica</a>
+</li>
+</li>
+</ul>
+</div>
+</nav>
+
+<style>
+    .quiz-container {
+        outline: #33FF34 1px;
+        background-color: #C4A69D;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 2px #3D348B;
+        width: 700px;
+        overflow: hidden;
+    }
+
+    .quiz-header {
+        padding: 4rem;
+    }
+li label {
+        cursor: pointer;
+    }
+
+    button {
+        background-color: #90BE6D;
+        color: #6A33FF;
+        border: none;
+        display: block;
+        width: 100%;
+        cursor: pointer;
+        font-size: 15px;
+        font-family: verdana, Geneva;
+        padding: 15px;
+    }
+
+    button:hover {
+        background-color: #37371F;
+    }
+
+    button:focus {
+        outline: none;
+        background-color: #FF0D5;
+    }
+    </style>
+
+
+
+<div class="container">
+  <div class="quiz-container" id="quiz">
+    <div class="quiz-header">
+      <div class="image-container">
+        <center><img src="imagen.jpeg" alt="Imagen" id="question-image" style="width: 250px; height: 200px;"></center>
+
+
+
+
+
+      </div>
+
+
+
+      <h2 id="question">Question Text</h2>
+      <ul>
+        <li>
+          <input type="radio" name="answer"
+          id="a" class="answer">
+          <label for="a" id="a_text">Question</label>
+        </li>
+
+          <li>
+          <input type="radio" name="answer"
+          id="b" class="answer">
+          <label for="b" id="b_text">Question</label>
+        </li>
+
+             <li>
+          <input type="radio" name="answer"
+          id="c" class="answer">
+          <label for="c" id="c_text">Question</label>
+        </li>
+
+              <li>
+          <input type="radio" name="answer"
+          id="d" class="answer">
+          <label for="d" id="d_text">Question</label>
+        </li>
+      </ul>
+    </div>
+<button id="submit">Submit</button>
+  </div>
+</div>
+<script>
+  //
+  const quizData = [
+
+{
+  question: "1. ¿Cuál es la primera víctima en la cual Light prueba la Death Note?",
+  image: "1.jpg",
+  a:"Un motociclista que intentaba abusar de una chica",
+  b:"Un político corrupto",
+  c:"Un agresor que tomó rehenes en una guardería",
+  d:"Un abusivo de su salón",
+  correct: "c",
+
+  },
+
+
+{
+  question: "2. ¿¿Cuáles son los nombres del escritor y el dibujante responsables de Death Note?",
+  image: "2.jpg",
+  a:"Hiroiko Araki y Satori Edo",
+  b:"Tsugumi Ohba y Takeshi Obata",
+  c:"Akira Toriyama y Masashi Kishimoto",
+  d:"Shuichi Mogi y Taro Mido",
+  correct: "b",
+
+  },
+
+{
+  question: "3. ¿En qué idioma están escritas las instrucciones de la Death Note?",
+  image: "3.jpg",
+  a:"Latin",
+  b:"Ingles",
+  c:"Japones",
+  d:"En la lengua de los Dioses de la muerte (Shinigami)",
+  correct: "b",
+
+  },
+
+  {
+  question: "4. ¿Cuál es el precio a pagar para obtener los ojos de un shinigami?",
+  image: "4.jpg",
+  a:" La vista se hace 3.5 veces superior a la de otras personas, pero pierdes al azar otro de tus sentidos",
+  b:"Cada nombre que escribas tras hacer el trato, te quita una semana de vida",
+  c:" La mitad de la vida restante de la persona que hace el trato",
+  d:"Tendrás que escribir los nombres de todos los miembros de tu familia biológica",
+  correct: "c",
+  },
+
+    {
+  question: "5. ¿Cuál de estas reglas de la Death Note es falsa?",
+  image: "5.jpg",
+  a:"Después de morir, el lugar a donde el usuario va, es MU (La Nada)",
+  b: "Si la persona que use esta libreta, deja de escribir nombres durante 13 días, morirá",
+  c: "Si se escribe el mismo nombre en 2 libretas con una diferencia de tiempo no mayor a 0.6 segundos, la muerte queda anulada",
+  d:"El Shinigami tendrá un plazo de 39 días humanos para presentarse ante la persona que se topó con la libreta",
+  correct: "b",
+  },
+
+  {
+  question: "6. ¿Cómo se puede matar a Shinigami?",
+  image: "6.jpg",
+  a:" Haciendo que éste utilice la libreta para aumentar el tiempo de vida restante de una persona en lugar de reducirlo",
+  b:"Apuñalándolo en el corazón o con balas de plata, como a otras criaturas de leyenda",
+  c:"Destruyendo su libreta, su alma esta vinculada a ella",
+  d:"Escribiendo su nombre en la libreta",
+  correct: "a",
+  },
+
+    {
+  question: "7. ¿Cuál es el verdadero nombre de L?",
+  image: "7.jpg",
+  a:"L Lawliet",
+  b:"Lind L. Taylor",
+  c:"Nate River",
+  d:"Teru Mikami",
+  correct: "a",
+  },
+
+    {
+  question: "8. ¿En qué episodio del anime muere L?",
+  image: "8.jpg",
+  a:"25. Silencio",
+  b:"No muere",
+  c:"33. Desprecio",
+  d:"30. Justicia",
+  correct: "a",
+  },
+
+    {
+  question: "9. ¿Dentro del grupo Yotsuba, quién tenía la Death Note?",
+  image: "9.jpg",
+  a:"Kida Masahiko",
+  b:"Higuchi Kyosuke",
+  c:"Midou Shingo",
+  d:"Hatori Arayoshi",
+  correct: "b",
+  },
+
+    {
+  question: "10. ¿A quién pertenece la Death Note que Ryuk deja caer en el mundo humano",
+  image: "10.jpg",
+  a:"Rem",
+  b:" Ryuk, pero él tiene una de respaldo",
+  c:" Jealous",
+  d:"Shido",
+  correct: "d",
+  },
+
+   
+
+  ];
+
+
+  const quiz = document.getElementById('quiz');
+  const answerEls = document.querySelectorAll('.answer');
+  const questionEl = document.getElementById('question');
+  const a_text = document.getElementById('a_text');
+  const b_text = document.getElementById('b_text');
+  const c_text = document.getElementById('c_text');
+  const d_text = document.getElementById('d_text');
+  const submitBtn = document.getElementById('submit');
+ 
+ let currentQuiz = 0;
+ let score = 0;
+ loadQuiz();
+
+ function loadQuiz(){
+  deselectAnswers();
+  const currentQuizData = quizData[currentQuiz];
+  questionEl.innerText = currentQuizData.question;
+  a_text.innerText = currentQuizData.a;
+  b_text.innerText = currentQuizData.b;
+  c_text.innerText = currentQuizData.c;
+  d_text.innerText = currentQuizData.d;
+
+const questionImage = document.getElementById("question-image");
+questionImage.src = currentQuizData.image;
+
+ }
+
+ function deselectAnswers(){
+ answerEls.forEach(answerEl => answerEl.checked = false); 
+ }
+
+ function getSelected(){
+  let answer;
+
+  answerEls.forEach(answerEl => {
+    if (answerEl.checked) {
+      answer = answerEl.id;
+    }
+  });
+
+  return answer;
+ }
+
+ submitBtn.addEventListener('click', () => {
+  const answer = getSelected();
+
+  if (answer){
+    if (answer === quizData[currentQuiz].correct){
+      score++;
+    }
+
+    currentQuiz++;
+    if(currentQuiz < quizData.length){
+      loadQuiz()
+    } else {
+      quiz.innerHTML = `
+      <h2>Contestaste ${score}/${quizData.length} de preguntas correctamente</h2>
+
+      <button onclick="location.reload()">Repetir</button>
+      `
+    }
+  }
+ })
+
+</script>
+
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h2>Contactame</h2>
+        <p>Si estas interesado en contactarme, puedes hacerlo a traves de las siguientes redes sociales:</p>
+        <div class="contact-links">
+          <a href="http://www.facebook.com/miperfil" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="http://www.instagram.com/miperfil" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="http://www.twitter.com/miperfil" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="http://www.snapchat.com/miperfil" target="_blank"><i class="fab fa-snapchat"></i></a>
+          <a href="http://www.linkedin.com/miperfil" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="http://www.youtube.com/miperfil" target="_blank"><i class="fab fa-youtube"></i></a>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  //Con lo siguiente hare que los links de las paginas se abran mediante javascript en un pagina nueva
+const socialnetworks = document.querySelectorAll('.contact-links a');
+socialnetworks.forEach(link =>{
+  link.addEventListener('click', e =>{
+    e.preventDefault();
+    window.open(link.href, '_blank');
+  });
+});
+</script>
+</footer>
+
+<script >
+       const socialnetworks = document.querySelectorAll('.contact-links a');
+    socialnetworks.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            window.open(link.href, '_blank');
+        });
+    });
+    </script>
+</body>
+</html>
